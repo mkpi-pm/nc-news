@@ -1,0 +1,6 @@
+.Articles-list {
+  background-color: white;
+  list-style: none;
+  padding: 1rem;
+  /* grid-area: main; */
+}
