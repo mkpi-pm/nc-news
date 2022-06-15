@@ -1,7 +1,7 @@
 import "./App.css";
-import Header from "./components/Header/Header";
-import Nav from "./components/Nav/Nav";
-import ArticlesList from "./components/ArticlesList/ArticlesList";
+import Header from "./components/Header";
+import Nav from "./components/Nav";
+import ArticlesList from "./components/ArticlesList";
 // import Comments from "./components/Comments";
 // import Users from "./components/Users";
 
