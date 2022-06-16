@@ -1,22 +1,22 @@
 import "../App.css";
 import {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
+import {getArticles} from "../utils/api";
 import ArticleCard from "./ArticleCard";
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  let {topic} = useParams();
+
 useEffect(() => {
-  fetch("https://be-nc-news-pk.herokuapp.com/api/articles")
-  .then((res) => {
-    return res.json();
-  })
-  .then(({articles}) => {
-    setArticles(articles);
+  getArticles(topic).then((articlesOfApi) => {
+    setArticles(articlesOfApi.articles);
     setIsLoading(false);
   })
 
-}, [])
+}, [topic]);
 
 if(isLoading) return <p>Loading ...</p>;
 
@@ -29,4 +29,3 @@ if(isLoading) return <p>Loading ...</p>;
   );
 };
 export default ArticlesList;
-//1201
